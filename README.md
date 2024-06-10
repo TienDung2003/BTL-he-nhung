@@ -1,5 +1,7 @@
 I. Giới Thiệu  
-- Sử dụng điện thoại để điều khiển oto thông qua modul thu phát bluetooth HC05 
+- Sử dụng điện thoại để điều khiển oto thông qua modul thu phát bluetooth HC05
+ ![kq1](https://github.com/TienDung2003/BTL-he-nhung/assets/128325350/514bb4a6-f2d5-4e73-8a3d-887480695646)
+
 
 II. Hướng Dẫn Sử Dụng 
 - Tải app rc bluetooth controller về điện thoại.![image](https://github.com/TienDung2003/BTL-he-nhung/assets/128325350/6873cb9e-65d4-4e03-be7a-e19884be97f0)
