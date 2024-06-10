@@ -1,18 +1,18 @@
 
 #include <SoftwareSerial.h>
  
-#define TX_PIN      4
-#define RX_PIN      3
+#define TX_PIN      7
+#define RX_PIN      8
 char value; 
 SoftwareSerial bluetooth(RX_PIN, TX_PIN);
 int baudRate[] = {300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200};
    
-int enbA=5;
-int in1 = 6;       
-int in2 = 7;        
-int in3 = 8;        
-int in4 = 9;  
-int enbB=10;      
+int enbA=3;
+int in1 = 5;       
+int in2 = 6;        
+int in3 = 9;        
+int in4 = 10;  
+int enbB=11;      
   
 void setup() {
   Serial.begin(9600);
