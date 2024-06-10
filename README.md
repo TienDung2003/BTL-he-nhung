@@ -18,9 +18,9 @@ IV. Sơ Đồ Nguyên Lý
 ![image](https://github.com/TienDung2003/BTL-he-nhung/assets/128325350/7701fd1e-1533-4d5a-936e-f324641ddc87)
 
 V. Thiết Kế Phần Mềm
- 1.Thiết lập Giao tiếp Bluetooth:
+ -1.Thiết lập Giao tiếp Bluetooth:
   - Mã Arduino khởi tạo một module Bluetooth được kết nối với Arduino sử dụng thư viện SoftwareSerial.
- 2.Điều Khiển Động Cơ:
+ -2.Điều Khiển Động Cơ:
   - Arduino điều khiển hai động cơ được kết nối với mô-đun điều khiển động cơ.
   - Nó sử dụng PWM (Pulse Width Modulation) để kiểm soát tốc độ của các động cơ và các chân kỹ thuật số để điều khiển hướng.
   - Các lệnh khác nhau ('F', 'B', 'L', 'R', 'W', 'U', 'V') nhận được qua Bluetooth tương ứng với các phong cách di chuyển khác nhau của robot (tùy vào app tải mà các lệnh sẽ sai khác nhau ):
@@ -31,14 +31,14 @@ V. Thiết Kế Phần Mềm
 'W': Dừng robot.
 'U': Xoay sang phải.
 'V': Xoay sang trái.
- 3.Thực Hiện Chức Năng:
+ -3.Thực Hiện Chức Năng:
   - Mỗi lệnh di chuyển được liên kết với một chức năng cụ thể thiết lập tín hiệu điều khiển động cơ phù hợp.
  Ví dụ, chức năng dithang() khiến robot di chuyển về phía trước bằng cách thiết lập các chân điều khiển động cơ tương ứng và điều chỉnh tốc độ của chúng bằng PWM.
- 4.Vòng Lặp Thực Hiện:
+ -4.Vòng Lặp Thực Hiện:
   - Trong vòng lặp chính, Arduino liên tục kiểm tra các lệnh Bluetooth đến.
   - Khi một lệnh được nhận, nó thực thi chức năng di chuyển tương ứng.
 
 VI. Tác Giả
- Giáp Tiến Dũng - 20215542
- Bùi Văn Cương - 20215536
- Đào Tiến Dũng - 20204822
+ -Giáp Tiến Dũng - 20215542
+ -Bùi Văn Cương - 20215536
+ -Đào Tiến Dũng - 20204822
