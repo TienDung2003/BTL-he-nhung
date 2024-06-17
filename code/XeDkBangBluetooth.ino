@@ -1,18 +1,18 @@
 
 #include <SoftwareSerial.h>
  
-#define TX_PIN      7
-#define RX_PIN      8
+#define TX_PIN      4
+#define RX_PIN      3
 char value; 
 SoftwareSerial bluetooth(RX_PIN, TX_PIN);
 int baudRate[] = {300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200};
    
-int enbA=3;
-int in1 = 5;       
-int in2 = 6;        
-int in3 = 9;        
-int in4 = 10;  
-int enbB=11;      
+int enbA=5;
+int in1 = 6;       
+int in2 = 7;        
+int in3 = 8;        
+int in4 = 9;  
+int enbB=10;      
   
 void setup() {
   Serial.begin(9600);
@@ -33,6 +33,8 @@ void setup() {
   while (!bluetooth) {}
   
   Serial.println("Enter AT commands:");
+  pinMode(12,  INPUT);
+  pinMode(13, OUTPUT);  
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
   pinMode(in3, OUTPUT);
@@ -44,7 +46,8 @@ void setup() {
   digitalWrite(in3, LOW);
   digitalWrite(in4, LOW);
   digitalWrite(enbA, LOW);
-  digitalWrite(enbB, LOW);
+  digitalWrite(enbB, LOW);  
+  digitalWrite(13, LOW);
   
  
 
@@ -83,13 +86,24 @@ void loop()
         break;  
     }
   }
+  int ct= digitalRead(12);//doc cong tac hanh trinh
+    
+
+
+
+  if(ct ==0){
+    digitalWrite(13, HIGH); //coi
+    delay(100);
+    digitalWrite(13, LOW);
+
+  }
 
 }
 
 void dithang()
 {
-  analogWrite(enbA, 150);
-  analogWrite(enbB, 150);
+  analogWrite(enbA, 200);
+  analogWrite(enbB, 200);
   digitalWrite(in1, 0);
   digitalWrite(in2, 1);
   digitalWrite(in3, 0);
@@ -108,7 +122,7 @@ void dunglai(){
 
 void disangphai()
 {
-  analogWrite(enbA, 150);
+  analogWrite(enbA, 200);
   analogWrite(enbB, 0);
   digitalWrite(in1, 0);
   digitalWrite(in2, 1);
@@ -120,7 +134,7 @@ void disangphai()
 void disangtrai()
 {
   analogWrite(enbA, 0);
-  analogWrite(enbB, 150);
+  analogWrite(enbB, 200);
   digitalWrite(in1, 0);
   digitalWrite(in2, 0);
   digitalWrite(in3, 0);
@@ -130,8 +144,8 @@ void disangtrai()
 
 void dilui()
 {
-  analogWrite(enbA, 150);
-  analogWrite(enbB, 150);
+  analogWrite(enbA, 200);
+  analogWrite(enbB, 200);
   digitalWrite(in1, 1);
   digitalWrite(in2, 0);
   digitalWrite(in3, 1);
@@ -141,8 +155,8 @@ void dilui()
 
 void xoay()
 {
-  analogWrite(enbA, 150);
-  analogWrite(enbB, 150);
+  analogWrite(enbA, 200);
+  analogWrite(enbB, 200);
   digitalWrite(in1, 0);
   digitalWrite(in2, 1);
   digitalWrite(in3, 1);
@@ -150,8 +164,8 @@ void xoay()
 }
 void xoaytrai()
 {
-  analogWrite(enbA, 1500);
-  analogWrite(enbB, 150);
+  analogWrite(enbA, 200);
+  analogWrite(enbB, 200);
   digitalWrite(in1, 1);
   digitalWrite(in2, 0);
   digitalWrite(in3, 0);
@@ -160,8 +174,8 @@ void xoaytrai()
 }
 void xoayphai()
 {
-  analogWrite(enbA, 150);
-  analogWrite(enbB, 150);
+  analogWrite(enbA, 200);
+  analogWrite(enbB, 200);
   digitalWrite(in1, 0);
   digitalWrite(in2, 1);
   digitalWrite(in3, 1);
