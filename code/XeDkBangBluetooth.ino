@@ -33,7 +33,8 @@ void setup() {
   while (!bluetooth) {}
   
   Serial.println("Enter AT commands:");
-  pinMode(12,  INPUT);
+
+  pinMode(11,  INPUT);
   pinMode(13, OUTPUT);  
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
@@ -47,7 +48,7 @@ void setup() {
   digitalWrite(in4, LOW);
   digitalWrite(enbA, LOW);
   digitalWrite(enbB, LOW);  
-  digitalWrite(13, LOW);
+  digitalWrite(13, 0);
   
  
 
@@ -76,30 +77,34 @@ void loop()
         disangphai();
         break;
       case 'W':
-        dunglai();
+        coi();
         break;
       case 'U':
-        xoayphai();
+        dunglai();
         break;
      case 'V':
         xoaytrai();
-        break;  
+        break; 
+      case 'v':
+      xoayphai(); 
+      break;
     }
   }
-  int ct= digitalRead(12);//doc cong tac hanh trinh
-    
+  // int ct= digitalRead(11);//doc cong tac hanh trinh
+  // Serial.println(ct);
+  // if(ct ==0){
+  //   digitalWrite(13, HIGH); //coi
+  //   delay(100);
+  //   digitalWrite(13, LOW);
 
-
-
-  if(ct ==0){
-    digitalWrite(13, HIGH); //coi
-    delay(100);
-    digitalWrite(13, LOW);
-
-  }
+  // }
 
 }
-
+void coi(){
+   digitalWrite(13, HIGH); //coi
+    delay(500);
+    digitalWrite(13, LOW);
+}
 void dithang()
 {
   analogWrite(enbA, 200);
